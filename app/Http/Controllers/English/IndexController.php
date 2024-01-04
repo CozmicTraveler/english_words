@@ -25,11 +25,11 @@ class IndexController extends Controller
         return view('english.index')->with('words',$words);
     }
 
-    //管理者が登録した単語からランダムに４問選択する(うち１つを正解とする)。
+    //Take four words which the administrater register.
     public function randomSelect(Request $request){
         //管理者が登録した単語を４つランダムに取得
         $words=English::inRandomOrder()->where('user_id',1)->take(4)->get();
-        //取得した４つのうちランダムなレコードを正解とする。
+        //The answer will be selected four of one randomly.
         $randInt=mt_rand(0,3);
         $answerWord=English::where('id','=',[$words[$randInt]->id])->take(1)->get();
         return view('english.question')->with('words',$words)->with('answerWord',$answerWord);
@@ -40,7 +40,7 @@ class IndexController extends Controller
         return view('english.hoge')->with('words',$words);
     }
 
-    //ログイン時に自身の登録した単語を表示する。
+    //Display registered words when logging in.
     public function myWords(Request $request,EnglishService $englishService,English $english)
     {
         $words=$englishService->myWords();
