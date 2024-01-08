@@ -32,6 +32,7 @@ class IndexController extends Controller
         //The answer will be selected four of one randomly.
         $randInt=mt_rand(0,3);
         $answerWord=English::where('id','=',[$words[$randInt]->id])->take(1)->get();
+        //Return 4 random words including the answer word.
         return view('english.question')->with('words',$words)->with('answerWord',$answerWord);
     }
 

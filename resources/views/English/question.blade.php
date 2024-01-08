@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0",
     maximum-scale=1.0, minimum-scale=1.0>
     <meta http-equiv="X-UA-Compativle" content="ie=edge">
-    <title>英単語テストm</title>
+    <title>英単語テスト</title>
     <style>
     .container{
         display: grid;
@@ -34,14 +34,14 @@
     @foreach($answerWord as $answer)
     <h2 id="{{$answer->id}}" style="margin-left:auto; margin-right:auto;">{{$answer->meaning1}}</h2>
     <div class="container">    
-    @foreach($words as $word)
-    
-    @if($answer->id===$word->id)
-    <a href="javascript:trueLinkClick();"><div id="answer" class="item">{{$word->word}}</div></a>
-    @else
-    <a href="javascript:falseLinkClick();"><div id="{{$word->id}}" class="item">{{$word->word}}</div></a>
-    @endif
-    @endforeach
+        @foreach($words as $word)
+        
+        @if($answer->id===$word->id)
+        <a href="javascript:trueLinkClick();"><div id="answer" class="item">{{$word->word}}</div></a>
+        @else
+        <a href="javascript:falseLinkClick();"><div id="{{$word->id}}" class="item">{{$word->word}}</div></a>
+        @endif
+        @endforeach
     </div>
     @endforeach
     <p id="result"></p>
