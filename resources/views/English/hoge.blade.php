@@ -60,7 +60,7 @@
             rndInt=getRandomInt(0,3);
             document.write('<p id="qMeaning">' + array[rndInt]['meaning1'] + '</p>');
             // document.write('<div id="question"><table border="1"><tr><td>word</td><td>meaning</td></tr>');
-            document.write('<div id="question"><table border="1"><tr><td>word</td></tr>');
+            document.write('<div id="question"><table border="1" width="360px">');
             for (let value of array){
                 if(cnt===rndInt){
                     document.write('<tr><td id="collect"><a href="javascript:void(0)" onclick="removePrevious(); dispCollect()">' + value['word'] + '</a></td>');
