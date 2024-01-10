@@ -28,6 +28,7 @@
         <th>単語</th>
         <th>意味１</th>
         <th>意味２</th>
+        <th>メモ</th>
     </tr>
 
     @foreach($words as $word)
@@ -35,6 +36,7 @@
         <td>{{$word->word}}</td>
         <td>{{$word->meaning1}}</td>
         <td>{{$word->meaning2}}</td>
+        <td>{{$word->memo}}</td>
     </tr>
     @endforeach
     </table>
