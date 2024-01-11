@@ -26,7 +26,12 @@ class CreateController extends Controller
         $english->user_id=$request->userId();
         $data=$request->add();
         // $english->save();
-        $english->insert($data);
+
+        //When using insert, created by cannot be updated(a little confusing).
+        // $english->insert($data);
+        
+        //When using create(), each column should be in $fillable or $guarded.
+        $english::create($data);
         return redirect()->route('english.myword');
     }
 }

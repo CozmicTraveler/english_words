@@ -13,6 +13,7 @@ class English extends Model
     *@var bool
     *
     **/
-    public $timestamp=true;
+    public $timestamps=true;
     protected $table='english';
+    protected $fillable = ['user_id','word','meaning1','meaning2','memo','created_by'];
 }
